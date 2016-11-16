@@ -1,0 +1,6 @@
+Amount of games: 24
+Game from given year: True
+Latest game in file: Diablo III
+Number of title: 18
+Top sold fps year: 1999
+List of genres: ['Action-adventure', 'First-person shooter', 'RPG', 'Real-time strategy', 'Sandbox', 'Simulation', 'Survival game']
