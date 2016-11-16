@@ -1,0 +1,6 @@
+Most played game: Minecraft
+All sales: 187.16
+Average of all sales: 7.798333333333333
+Longest title: 52
+Average of all release dates: 2003
+Given games properties: ['Half-Life', 9.3, 1998, 'First-person shooter', 'Valve Corporation']
