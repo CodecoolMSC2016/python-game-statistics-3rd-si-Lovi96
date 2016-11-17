@@ -98,5 +98,5 @@ def get_genres(file_name):
             list_of_genres.append(row[3])
     csv_file.close()
     # print(sorted(list_of_genres))
-    return sorted(list_of_genres)
+    return sorted(list_of_genres, key=str.lower)
     # Report functions
