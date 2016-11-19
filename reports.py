@@ -78,13 +78,16 @@ def when_was_top_sold_fps(file_name):
     fps_name = ""
     fps_year = 0
     fps_sold = 0
-    for row in csv_reader:
-        if row[3] == "First-person shooter":
-            if float(row[1]) > fps_sold:
-                fps_sold = float(row[1])
-                fps_year = int(row[2])
-    csv_file.close()
-    return fps_year
+    try:
+        for row in csv_reader:
+            if row[3] == "First-person shooter":
+                if float(row[1]) > fps_sold:
+                    fps_sold = float(row[1])
+                    fps_year = int(row[2])
+        csv_file.close()
+        return fps_year
+    except:
+        return ValueError
 
 
 def get_genres(file_name):
@@ -97,6 +100,5 @@ def get_genres(file_name):
         if row[3] not in list_of_genres:
             list_of_genres.append(row[3])
     csv_file.close()
-    # print(sorted(list_of_genres))
     return sorted(list_of_genres, key=str.lower)
-    # Report functions
+    
