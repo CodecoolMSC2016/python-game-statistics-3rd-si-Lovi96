@@ -63,12 +63,15 @@ def get_line_number_by_title(file_name, title):
     csv_file = open(file_name, 'r')
     csv_reader = csv.reader(csv_file, delimiter='\t')
     counter = 1
-    for row in csv_reader:
-        if row[0] != title:
-            counter += 1
-        else:
-            csv_file.close()
-            return counter
+    try:
+        for row in csv_reader:
+            if row[0] != title:
+                counter += 1
+            else:
+                csv_file.close()
+                return counter
+    except:
+        return ValueError
 
 
 def when_was_top_sold_fps(file_name):
@@ -91,8 +94,7 @@ def when_was_top_sold_fps(file_name):
 
 
 def get_genres(file_name):
-    '''Gets all the genres from the given file and returns them as a list.
-    Currently sorted() bugs out and returns the items in the wrong alphabetical order.'''
+    '''Gets all the genres from the given file and returns them as a list.'''
     csv_file = open(file_name, 'r')
     csv_reader = csv.reader(csv_file, delimiter='\t')
     list_of_genres = []
@@ -101,4 +103,3 @@ def get_genres(file_name):
             list_of_genres.append(row[3])
     csv_file.close()
     return sorted(list_of_genres, key=str.lower)
-    
