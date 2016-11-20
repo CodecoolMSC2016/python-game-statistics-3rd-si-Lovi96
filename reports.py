@@ -70,9 +70,9 @@ def get_line_number_by_title(file_name, title):
             else:
                 csv_file.close()
                 return counter
-    except:
-        return ValueError
-
+        raise ValueError
+    except ValueError:
+        
 
 def when_was_top_sold_fps(file_name):
     '''Gets the top sold fps year of release'''
@@ -88,10 +88,10 @@ def when_was_top_sold_fps(file_name):
                     fps_sold = float(row[1])
                     fps_year = int(row[2])
         csv_file.close()
+        raise ValueError
         return fps_year
-    except:
-        return ValueError
-
+    except ValueError:
+        
 
 def get_genres(file_name):
     '''Gets all the genres from the given file and returns them as a list.'''
